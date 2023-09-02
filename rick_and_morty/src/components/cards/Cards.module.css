@@ -1,0 +1,10 @@
+.cardlist {
+    margin-top: 80px;
+    margin-left: 100px;
+    max-width: 80vw;
+    margin-bottom: 30px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 70px;
+}

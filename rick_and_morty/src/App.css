@@ -1,0 +1,19 @@
+.App {
+   text-align: center;
+}
+.title {
+   width: 180px;
+   margin-top:15px;
+   border: white 1px solid;
+   margin-bottom:10px;
+   height: 150px;
+   background-color: aqua;
+}
+
+.title:hover{
+   scale: 1.1;
+   border: aqua 1px solid;
+   scroll-snap-align: 2px;
+}
+
+
