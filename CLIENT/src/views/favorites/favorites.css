@@ -1,0 +1,36 @@
+
+  .custom-selector {
+    padding: 5px;
+    border: 1px solid #2cceb3;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 12px;
+    margin-right: 10px; 
+    margin-top: 20px;
+    color: #2cceb3;
+  }
+  
+  
+  .custom-selector option {
+    background-color: transparent;
+    color: #000000
+    
+  }
+
+  .custom-selector2 {
+    padding: 5px;
+    border: 1px solid #2cceb3;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 12px;
+    margin-right: 10px; 
+    margin-top: 20px;
+    color: #2cceb3;
+  }
+
+.custom-selector2:hover{
+    scale: 1.1;
+    
+}
+  
+  
