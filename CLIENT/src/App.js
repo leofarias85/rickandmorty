@@ -21,15 +21,20 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const EMAIL = 'ejemplo@gmail.com';
-  const PASSWORD = 'unaPass1';
-
-  function login(userData) {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/home");
+  
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      const{data}= await axios(URL + `?email=${email}&password=${password}`);
+      const {access}= data;
+         setAccess(data);
+         access && navigate('/home');
+      } catch (error) {
+      console.log (error)
     }
-  }
+   
+ }
 
   function logoutHandler() {
     setAccess(false);
@@ -39,15 +44,22 @@ function App() {
     !access && navigate("/");
   }, [access]);
 
-  function searchHandler(id) {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+  async function searchHandler(id) {
+
+    try {
+      const response= await axios(`https://rickandmortyapi.com/api/character/${id}`)
+      const data=response.data
       if (data.name) {
         setCharacters((oldChars) => [...oldChars, data]);
       } else {
         window.alert('No hay personajes con este ID');
       }
-    })
-  }
+    } catch (error) {
+      console.log (error)
+    }
+    
+    }
+  
 
   function closeHandler(id) {
     let deleted = characters.filter((character) => character.id !== Number(id));
